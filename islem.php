@@ -2,6 +2,14 @@
 
 $eski_klasor = $_REQUEST['klasor'];
 $yeni_klasor = $_REQUEST['hklasor'];
+$aklasor	 = $_REQUEST['aklasor'];
+$bklasor 	 = $_REQUEST['bklasor'];
+
+$pdf1 	     = $_REQUEST['pdf1'];
+$pdf2 	     = $_REQUEST['pdf2'];
+
+$deneme 	 = $_REQUEST['deneme'];
+
 $dosya_adi   = $_REQUEST['dosya'];
 $excel   	 = $_REQUEST['excel'];
 $yedek   	 = array();
@@ -13,9 +21,11 @@ $exc = preg_split('/\s+/u', $excel);
 $yedek=$exc; 
 #314
 
-islem2($exc,$eski_klasor,$yeni_klasor);
 
-function islem2($exc,$e,$y)
+
+islem2($exc,$eski_klasor,$yeni_klasor,$aklasor,$bklasor,$pdf1,$pdf2);
+
+function islem2($exc,$e,$y,$ak,$bk,$pdf1,$pdf2)
 {
 
 #toplamdeger
@@ -52,12 +62,20 @@ function islem2($exc,$e,$y)
 
 			$json1     = glob($e."/".$tara1[$i]."*");
 			$json2     = glob($y."/".$tara1[$i]."*");
+			$json3     = glob($ak."/".$tara1[$i]."*");
+			$json4     = glob($bk."/".$tara1[$i]."*");
 
-			$liste       = array_merge($json1, $json2);
+			$liste       = array_merge($json1,$json2,$json3,$json4);
 			$listetoplam = count($liste);
 			mkdir($tara2[$i]);
 			$klasor    = $tara2[$i];
+				
+			copy($pdf1,$klasor."/".$pdf1);
+			copy($pdf2,$klasor."/".$pdf2);	
 			
+				
+			/*copy($pdf1,$klasor."/".$pdf1);
+			copy($pdf2,$klasor."/".$pdf2);*/
 
 			for($m=0;$m<$listetoplam;$m++)
 		{		
@@ -66,8 +84,12 @@ function islem2($exc,$e,$y)
 			$token    = $liste[$m];
 			copy($token,$klasor."/".$bolunmus[1]);
 
+
+			
 		}
 
+
+		
 
 	}
 

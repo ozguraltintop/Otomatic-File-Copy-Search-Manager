@@ -314,12 +314,82 @@ build_blocks( $items, false );
 
 	  	
 			 <form method="post" action="islem.php">	
-			<label>1)Klasor  : </label><input type="text" id="klasor" name="klasor" class="form-control"><br>
+			<!-- <label>1)Klasor  : </label><input type="text" id="klasor" name="klasor" class="form-control"><br>
 			<label>2)Klasor  : </label><input type="text" id="hklasor" name="hklasor" class="form-control"><br>
-		
+			<label>3)Klasor  : </label><input type="text" id="aklasor" name="aklasor" class="form-control"><br>
+			<label>4)Klasor  : </label><input type="text" id="bklasor" name="bklasor" class="form-control"><br> -->
+			<label>1)Klasor  : </label>
+			<select name="klasor" id="klasor">
+				<?php
+
+				$dosyalar = glob("*");
+				array_unshift($dosyalar, "");
+				foreach ($dosyalar as $dosya) {
+
+				  echo "<option value=".$dosya.">".$dosya."</option>";
+
+				}
+
+				?>
+			  
+			
+			</select><br>
+			<label>2)Klasor  : </label>
+			<select name="hklasor" id="hklasor">
+				<?php
+
+				$dosyalar = glob("*");
+				array_unshift($dosyalar, "");
+
+				foreach ($dosyalar as $dosya) {
+
+				  echo "<option value=".$dosya.">".$dosya."</option>";
+
+				}
+
+				?>
+			  
+			
+			</select><br>
+			<label>3)Klasor  : </label>
+			<select name="aklasor" id="aklasor">
+				<?php
+
+				$dosyalar = glob("*");
+				array_unshift($dosyalar, "");
+				foreach ($dosyalar as $dosya) {
+
+				  echo "<option value=".$dosya.">".$dosya."</option>";
+
+				}
+
+				?>
+			  
+			
+			</select><br>
+			<label>4)Klasor  : </label>
+			<select name="bklasor" id="bklasor">
+				<?php
+
+				$dosyalar = glob("*");
+				array_unshift($dosyalar, "");
+				foreach ($dosyalar as $dosya) {
+
+				  echo "<option value=".$dosya.">".$dosya."</option>";
+
+				}
+
+				?>
+			  
+			
+			</select><br><br><br>
+
+			
+
 
 			<textarea name="excel" id="excel" rows="10" cols="15"></textarea><br>
-
+			<input type="file" id="pdf1" name="pdf1"><br>
+			<input type="file" id="pdf2" name="pdf2"><br><br>
 			<button id="btn3" class="btn btn-outline-primary">Create</button> 
 			
 			</form>

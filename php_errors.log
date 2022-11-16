@@ -1,4 +1,0 @@
-[06-Nov-2022 16:07:36 UTC] PHP Notice:  Undefined index: dosya in C:\inetpub\wwwroot\file\islem.php on line 5
-[06-Nov-2022 16:09:00 UTC] PHP Notice:  Undefined index: dosya in C:\inetpub\wwwroot\file\islem.php on line 5
-[06-Nov-2022 16:09:00 UTC] PHP Notice:  Undefined variable: tara1 in C:\inetpub\wwwroot\file\islem.php on line 48
-[06-Nov-2022 16:09:00 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\inetpub\wwwroot\file\islem.php on line 48
